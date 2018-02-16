@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 //connect to mongo.
-mongoose.connect('mongodb://localhost/media');
+mongoose.connect('mongodb://localhost/MediaMetaData');
 mongoose.Promise = global.Promise;
 
 
