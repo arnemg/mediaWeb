@@ -6,7 +6,9 @@ const mongoose = require('mongoose');
 const app = express();
 
 //connect to mongo.
-mongoose.connect('mongodb://localhost/MediaMetaData');
+var xternDB = 'mongodb://test:test@ds133558.mlab.com:33558/media'
+var localDB = 'mongodb://localhost/MediaMetaData';
+mongoose.connect(xternDB);
 mongoose.Promise = global.Promise;
 
 
