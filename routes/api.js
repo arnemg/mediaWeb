@@ -2,6 +2,16 @@ const express = require('express');
 const router = express.Router();
 const Media = require('../models/metaData');
 
+
+//Legger inn en GET for ArtGallery - GET /Art
+//Hent liste av media fra databasen
+router.get('/art', function(req, res, next){
+  console.log("ART __---___ GET");
+    res.sendFile('./public/index.html');
+});
+
+
+
 //Hent liste av media fra databasen
 router.get('/media', function(req, res, next){
   Media.find().then(function(resultat){
