@@ -12,29 +12,31 @@
 </header>
 
 <body>
-  <h2>Liste over  <%= bilder.length %> <%= bilder[0].media %></h2>
+  <h2>Liste over <%= vidois.length %> <%= vidois[0].media %></h2>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
       <div class="table-responsive" data-pattern="priority-columns">
         <table summary="This table shows how to create responsive tables using RWD-Table-Patterns' functionality" class="table table-bordered table-hover">
-          <caption class="text-center">Liste over <%= bilder.length %> <a href="http://gergeo.se/RWD-Table-Patterns/" target="_blank"> solution</a>:</caption>
+          <caption class="text-center">Liste over <%= vidois.length %> </caption>
           <thead>
             <tr>
+              <th>Vidois</th>
               <th data-priority="1">Filnavn</th>
-              <th data-priority="2">Make and Model</th>
+              <th data-priority="2">Lengde</th>
               <th data-priority="3">Format (Width x Height)</th>
-              <th data-priority="4">Orginal dato</th>
+              <th data-priority="4">FPS</th>
             </tr>
           </thead>
           <tbody>
-            <% bilder.forEach(function(bilde){ %>
+            <% vidois.forEach(function(video){ %>
             <tr>
-              <td><%= bilde.filnavn %></td>
-              <td><%= bilde.Make %> - <%= bilde.Model %></td>
-              <td><%= bilde.ExifImageHeight %> x <%= bilde.ExifImageWidth %> </td>
-              <td><%= bilde.DateTimeOriginal %></td>
+              <td>Videoklipp</td>
+              <td><%= video.filnavn %></td>
+              <td><%= video.duration %></td>
+              <td><%= video.resolution_w %> x <%= video.resolution_h %> </td>
+              <td><%= video.fps %></td>
             </tr>
             <% }); %>
           </tbody>

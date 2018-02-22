@@ -10,8 +10,17 @@ router.get('/', function(req, res, next) {
 
 // bilder page
 router.get('/bilder', function(req, res, next) {
-      Media.find({ 'media': 'Video' }).then(function(bilder){
+      Media.find({ 'media': 'Bilde' }).then(function(bilder){
+
         res.render('pages/bilder', {bilder} );
+        //res.send(resultat);
+      });
+    });
+
+router.get('/videos', function(req, res, next) {
+      Media.find({ 'media': 'Video' }).then(function(vidois){
+
+        res.render('pages/video', {vidois} );
         //res.send(resultat);
       });
     });
