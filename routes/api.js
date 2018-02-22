@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
 
 // bilder page
 router.get('/bilder', function(req, res, next) {
-      Media.find({ 'media': 'Bilde' }).then(function(bilder){
+      Media.find({ 'media': 'Video' }).then(function(bilder){
         res.render('pages/bilder', {bilder} );
         //res.send(resultat);
       });
