@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 //Set up express app - setter opp mye i bakgrunnen
 const app = express();
 
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
 //connect to mongo.
 var xternDB = 'mongodb://test:test@ds133558.mlab.com:33558/media'
 var localDB = 'mongodb://localhost/MediaMetaData';

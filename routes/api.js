@@ -3,14 +3,30 @@ const router = express.Router();
 const Media = require('../models/metaData');
 
 
-//Legger inn en GET for ArtGallery - GET /Art
-//Hent liste av media fra databasen
-router.get('/art', function(req, res, next){
-  console.log("ART __---___ GET");
-    res.sendFile('./public/index.html');
+router.get('/', function(req, res, next) {
+    var myParam = "Dette er en tekstlinje";
+    console.log("GET root --> myParam " + myParam);
+    res.render('pages/index', {myParam});
 });
 
+// bilder page
+router.get('/bilder', function(req, res, next) {
+      Media.find({ 'media': 'Video' }).then(function(resultat){
+        var antall = resultat.length;
+        console.log(antall);
+        res.render('pages/bilder', {antall});
+      });
+    });
+      /*var bilder = [{media: 'Bilde', filnavn: 'FilnummerEN.txt', duration: 30},
+                    {media: 'Bilde',  filnavn: 'FilnummerTO.txt', duration: 40},
+                    {media: 'Bilde',  filnavn: 'FilnummerTRE.txt', duration: 90}];
+*/
 
+
+// about page
+router.get('/about', function(req, res, next) {
+    res.render('pages/about', {title: 'Dette er about Tittelen'});
+});
 
 //Hent liste av media fra databasen
 router.get('/media', function(req, res, next){
@@ -18,7 +34,6 @@ router.get('/media', function(req, res, next){
     res.send(resultat);
   });
 });
-
 
 //Legge til media
 router.post('/media', function(req, res, next){

@@ -35,7 +35,7 @@ const metadataSchema = new Schema({
   });
 
 //Vil lage en collection med navn bibinfo
-const metadataModel = mongoose.model('metadata', metadataSchema);
+const metadataModel = mongoose.model('mediametadata', metadataSchema);
 
 //Gjør denne tilgjengelig i andre filer.
 module.exports = metadataModel;

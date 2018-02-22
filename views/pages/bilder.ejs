@@ -1,0 +1,34 @@
+<!-- views/pages/bilder.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<body class="container">
+
+<header>
+    <% include ../partials/header %>
+</header>
+
+<main>
+    <div class="jumbotron">
+        <h1>Bilder</h1>
+        <p>Dette er starten på listing av bilder</p>
+        <ul>
+            <% bilder.forEach(function(bilde){ %>
+                <li>Filnavn -->  <%= bilde.filnavn %></li>
+                <li>duration -->  <%= bilde.duration %></li>
+                <li>Høyde -->  <%= bilde.ExifImageHeight %></li>
+                <li>Bredde -->  <%= bilde.ExifImageWidth %></li>
+            <% }); %>
+        </ul>
+    </div>
+</main>
+
+<footer>
+    <% include ../partials/footer %>
+</footer>
+
+</body>
+</html>
