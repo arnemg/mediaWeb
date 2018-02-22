@@ -1,0 +1,6 @@
+<% bilder.forEach(function(bilde){ %>
+    <li>Filnavn -->  <%= bilde.filnavn %></li>
+    <li>duration -->  <%= bilde.duration %></li>
+    <li>Høyde -->  <%= bilde.ExifImageHeight %></li>
+    <li>Bredde -->  <%= bilde.ExifImageWidth %></li>
+<% }); %>
