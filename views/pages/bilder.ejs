@@ -5,7 +5,6 @@
 <head>
     <% include ../partials/head %>
 </head>
-<body class="container">
 
 <header>
     <% include ../partials/header %>
@@ -31,10 +30,10 @@
           <tbody>
             <% bilder.forEach(function(bilde){ %>
             <tr>
-              <td><%= bilde.filnavn %></td>
+              <td><a href= <%= bilde.absolute_path %> ><%= bilde.filnavn %></td>
               <td><%= bilde.Make %> - <%= bilde.Model %></td>
               <td><%= bilde.ExifImageHeight %> x <%= bilde.ExifImageWidth %> </td>
-              <td><%= bilde.DateTimeOriginal %></td>
+              <td><%= bilde.DateTimeOriginal %></a></td>
             </tr>
             <% }); %>
           </tbody>

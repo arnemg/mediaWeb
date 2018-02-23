@@ -1,25 +1,45 @@
 const express = require('express');
 const router = express.Router();
 const Media = require('../models/metaData');
-
+const fs = require('fs');
 
 router.get('/', function(req, res, next) {
-    var myParam = "Dette er en tekstlinje";
+    var myParam = "Velkommen ";
     res.render('pages/index', {myParam});
+});
+
+router.get('/gallery', function(req, res, next) {
+  //lister alle filer i forskjellige kategorier (basert på katalognavn)
+  var allfiles = fs.readdir('./public/art', function(err, filelist){
+    var allArt;
+    if(err){
+      console.log("ERR - read gallery allfiles --> " + err);
+    }
+    console.log(filelist);
+      res.render('pages/gallery', {filelist} );
+  });
+});
+
+router.get('/art', function(req, res, next) {
+  //lister alle filer i forskjellige kategorier (basert på katalognavn)
+  var allfiles = fs.readdir('./public/art', function(err, filelist){
+    var allArt;
+    if(err){
+      console.log("ERR - read art allfiles --> " + err);
+    }
+      res.render('pages/art', {filelist} );
+  });
 });
 
 // bilder page
 router.get('/bilder', function(req, res, next) {
-      Media.find({ 'media': 'Bilde' }).then(function(bilder){
-
+      Media.find({ 'media': 'Bilde' }).sort({DateTimeOriginal: -1}).then(function(bilder){
         res.render('pages/bilder', {bilder} );
         //res.send(resultat);
       });
     });
-
 router.get('/videos', function(req, res, next) {
-      Media.find({ 'media': 'Video' }).then(function(vidois){
-
+      Media.find({ 'media': 'Video' }).sort({ModifyDate: -1}).then(function(vidois){
         res.render('pages/video', {vidois} );
         //res.send(resultat);
       });

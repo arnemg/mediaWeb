@@ -26,7 +26,7 @@
               <th data-priority="1">Filnavn</th>
               <th data-priority="2">Lengde</th>
               <th data-priority="3">Format (Width x Height)</th>
-              <th data-priority="4">FPS</th>
+              <th data-priority="4">Make & Model</th>
             </tr>
           </thead>
           <tbody>
@@ -36,7 +36,7 @@
               <td><%= video.filnavn %></td>
               <td><%= video.duration %></td>
               <td><%= video.resolution_w %> x <%= video.resolution_h %> </td>
-              <td><%= video.fps %></td>
+              <td><%= video.Make %> & <%= video.Model %></td>
             </tr>
             <% }); %>
           </tbody>
