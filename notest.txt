@@ -1,3 +1,24 @@
+<% teller = 0 %>
+<% filelist.forEach(function(bilde){
+   if(teller % 1){ %>
+      <li class="highlight-box"><img src="/art/<%= bilde %>" /></li>
+  <% }else if(teller % 3){ %>
+    <li class="highlight-wide"><img src="/art/<%= bilde %>" /></li>
+  <% }else if(teller % 5){ %>
+    <li class="highlight-tall"><img src="/art/<%= bilde %>" /></li>
+  <% }else { %>
+    <li><img src="/art/<%= bilde %>" /></li>
+  <% }
+  teller ++
+  }); %>
+
+
+
+
+
+
+
+
 <% if(teller % 2){ %>
     <li class="highlight-box"><img src="/art/bw/<%= bilde %>" /></li>
 <% } %>

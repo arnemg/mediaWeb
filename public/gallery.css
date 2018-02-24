@@ -59,9 +59,11 @@
 }
 
 img {
-    height: 180px;
+    height: 180;
     background-size: cover;
+    width: 100%;
     background-position: center;
+
 }
 text {
     color: cyan;

@@ -13,29 +13,29 @@
 </header>
 
 <main>
-
         <div class="container">
+          <% teller = 0 %>
+          <% filelist.forEach(function(bilde){ %>
           <div class="row">
             <div class="pic-container">
               <div class="parent">
                 <div class="wrapper thumb-1">
                   <div class="content">
-                    <div class="img"><img src="/art/<%= filelist[0] %>" /></div>
-                    <div class="text">Text - filnavnet er <strong><%=filelist[0]%></strong>                      <div class="line title"></div>
-                      <div class="line subtitle">Subtitle</div>
+                    <div class="img"><img src="/art/<%= bilde %>" /></div>
+                    <div class="text"><strong><%= bilde %></strong>
+                      <div class="line title">Dette er TITLE</div>
+                      <div class="line subtitle">Dette er SubTITLE</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <%  teller ++
+            }); %>
         </div>
-
 </main>
-
 <footer>
     <% include ../partials/footer %>
 </footer>
-
-
 </html>
