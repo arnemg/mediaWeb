@@ -1,0 +1,54 @@
+/* Videobakgrunn */
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+#outer{
+    width:100%;
+    display:block;
+    text-align:center;
+    position:relative;
+    overflow: hidden;
+    height:10000px;
+    min-height:100%;
+}
+#home-top-video{
+    left:0%;
+    top:0%;
+    height:100%;
+    width:100%;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+#home-text{
+    left:0%;
+    top:0;
+    height:100%;
+    width:100%;
+    padding-top:10%;
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    color:white
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+strong {
+  font-weight: 500;
+  color: orange;
+   text-shadow: 3px 2px black;
+}

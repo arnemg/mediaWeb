@@ -1,55 +1,44 @@
-<!-- views/pages/index.ejs -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <% include ../partials/head %>
 </head>
-<body class="container">
 
 <header>
     <% include ../partials/header %>
+    <link rel="stylesheet" href="/css/liste.css">
+
 </header>
 
 <body>
-  <h2>Liste over <%= vidois.length %> <%= vidois[0].media %></h2>
+  <h2>Liste over  <%= vidois.length %> <%= vidois[0].media %></h2>
 
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="table-responsive" data-pattern="priority-columns">
-        <table summary="This table shows how to create responsive tables using RWD-Table-Patterns' functionality" class="table table-bordered table-hover">
-          <caption class="text-center">Liste over <%= vidois.length %> </caption>
-          <thead>
-            <tr>
-              <th>Vidois</th>
-              <th data-priority="1">Filnavn</th>
-              <th data-priority="2">Lengde</th>
-              <th data-priority="3">Format (Width x Height)</th>
-              <th data-priority="4">Make & Model</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% vidois.forEach(function(video){ %>
-            <tr>
-              <td>Videoklipp</td>
-              <td><%= video.filnavn %></td>
-              <td><%= video.duration %></td>
-              <td><%= video.resolution_w %> x <%= video.resolution_h %> </td>
-              <td><%= video.Make %> & <%= video.Model %></td>
-            </tr>
-            <% }); %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="5" class="text-center">Data retrieved from <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div><!--end of .table-responsive-->
-    </div>
-  </div>
-</div>
+  <table id="media">
+      <caption>Liste over <%= vidois.length %> <a href="http://gergeo.se/RWD-Table-Patterns/" target="_blank"> solution</a>:</caption>
+    <thead>
+      <tr>
+        <th>Filnavn</th>
+        <th>Lengde</th>
+        <th>Format (Width x Height)</th>
+        <th>Make & Model</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% vidois.forEach(function(video){ %>
+      <tr>
+        <td><%= video.filnavn %></td>
+        <td><%= video.duration %></td>
+        <td><%= video.resolution_w %> x <%= video.resolution_h %> </td>
+        <td><%= video.Make %> & <%= video.Model %></td>
+      </tr>
+      <% }); %>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td>Data retrieved from <a href="http://www.infoplease.com/ipa/A0855611.html" target="_blank">infoplease</a> and <a href="http://www.worldometers.info/world-population/population-by-country/" target="_blank">worldometers</a>.</td>
+      </tr>
+    </tfoot>
+  </table>
 
 <footer>
     <% include ../partials/footer %>

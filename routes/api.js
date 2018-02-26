@@ -8,39 +8,18 @@ router.get('/', function(req, res, next) {
     res.render('pages/index', {myParam});
 });
 
-router.get('/videotest', function(req, res, next) {
+router.get('/hogst', function(req, res, next) {
     var myParam = "Velkommen ";
-    res.render('pages/videotest');
+    res.render('pages/hogst');
 });
 
-router.get('/photowall', function(req, res, next) {
+router.get('/artgallery', function(req, res, next) {
   //lister alle filer i forskjellige kategorier (basert på katalognavn)
   var allfiles = fs.readdir('./public/art', function(err, filelist){
     if(err){
       console.log("ERR - read art allfiles --> " + err);
     }
-      res.render('pages/photowall', {filelist} );
-  });
-});
-
-router.get('/gallery', function(req, res, next) {
-  //lister alle filer i forskjellige kategorier (basert på katalognavn)
-  var allfiles = fs.readdir('./public/art', function(err, filelist){
-    if(err){
-      console.log("ERR - read gallery allfiles --> " + err);
-    }
-      res.render('pages/gallery', {filelist} );
-  });
-});
-
-router.get('/art', function(req, res, next) {
-  //lister alle filer i forskjellige kategorier (basert på katalognavn)
-  var allfiles = fs.readdir('./public/art', function(err, filelist){
-    var allArt;
-    if(err){
-      console.log("ERR - read art allfiles --> " + err);
-    }
-      res.render('pages/art', {filelist} );
+      res.render('pages/artgallery', {filelist} );
   });
 });
 
