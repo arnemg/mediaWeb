@@ -42,6 +42,11 @@ router.get('/about', function(req, res, next) {
     res.render('pages/about', {title: 'Dette er about Tittelen'});
 });
 
+// HABPanel iframe
+router.get('/panel', function(req, res, next) {
+    res.render('pages/panel', {title: 'HABPanel'});
+});
+
 //Hent liste av media fra databasen
 router.get('/media', function(req, res, next){
   Media.find().then(function(resultat){

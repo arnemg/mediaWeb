@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+        body {
+              margin: 0;            /* Reset default margin */
+            }
+        iframe {
+          display: block;       /* iframes are inline by default */
+          background: #000;
+          border: none;         /* Reset default border */
+          height: 100vh;        /* Viewport-relative units */
+          width: 100vw;
+        }
+    </style>
+    <title></title>
+  </head>
+  <head>
+      <% include ../partials/head %>
+  </head>
+  <header>
+      <% include ../partials/header %>
+  </header>
+
+  <body>
+    <iframe src="http://192.168.0.246:8080/habpanel/index.html#/" ></iframe>
+
+  </body>
+</html>
